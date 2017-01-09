@@ -1,0 +1,39 @@
+﻿  msg_handler.c
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(399): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(406): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(412): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(543): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(553): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(735): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(742): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(748): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(801): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdio.h(811): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\swprintf.inl(23): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\swprintf.inl(30): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(307): error C2085: “_exit”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(307): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(311): error C2085: “_Exit”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(311): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(314): error C2085: “_Exit”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(314): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(314): warning C4013: “_exit”未定义；假设外部返回 int
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(314): error C2065: “status”: 未声明的标识符
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(320): error C2059: 语法错误:“类型”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(601): error C2491: “_beep”: 不允许 dllimport 函数 的定义
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(603): error C2085: “_seterrormode”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(603): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(604): error C2085: “_sleep”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(604): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(625): error C2085: “ecvt”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(626): error C2085: “fcvt”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(627): error C2085: “gcvt”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(628): error C2085: “itoa”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(629): error C2085: “ltoa”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(630): error C2085: “putenv”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(634): error C2085: “swab”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(637): error C2085: “ultoa”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(638): error C2085: “onexit”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(644): error C2085: “lldiv_t”: 不在形参表中
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(646): error C2061: 语法错误: 标识符“lldiv_t”
+D:\Qt\Qt5.7.0_gcc\Tools\mingw530_32\i686-w64-mingw32\include\stdlib.h(648): fatal error C1903: 无法从以前的错误中恢复；正在停止编译

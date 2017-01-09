@@ -1,0 +1,17 @@
+﻿  Checking Build System
+  CMake is re-running because G:/project/pushserver/build/CMakeFiles/generate.stamp is out-of-date.
+    the file 'G:/project/pushserver/CMakeLists.txt'
+    is newer than 'G:/project/pushserver/build/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  CMake Warning (dev) in src/CMakeLists.txt:
+    Syntax Warning in cmake code at
+  
+      G:/project/pushserver/src/CMakeLists.txt:13:22
+  
+    Argument not separated from preceding token by whitespace.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  Build Type:Debug /DWIN32 /D_WINDOWS /W3 /GR /EHsc -g -Wall -Wno-unused-variable
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: G:/project/pushserver/build

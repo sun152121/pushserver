@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="G:\project\pushserver\src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\mem_chain.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\mem_pool.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\rbtree.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\hash.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\hashmap.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\crc32.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\sds.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\event.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\queue.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\connection.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\buf.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\task_queue.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\context.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\threadpool.c">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\biz\msg_handler.c">
+      <Filter>biz</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\core\message.c">
+      <Filter>core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\project\pushserver\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{368A36FC-BF1F-3F10-80C2-9CD32B64D7EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{1129741e-c949-4e65-bde3-a6f16e7497be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{0701dea4-6453-446c-811f-d9d137bb17fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="biz">
+      <UniqueIdentifier>{fdce2cc0-2614-481f-a287-9b7bea456766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\json-c">
+      <UniqueIdentifier>{37ff44bb-42db-4413-941a-bd65364b0c8f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\core\mem_chain.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\mem_pool.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\rbtree.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\hash.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\hashmap.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\crc32.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\sds.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\mxml.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\event.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\queue.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\connection.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\buf.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\task_queue.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\contex.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\threadpool.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\biz\msg_handler.h">
+      <Filter>biz</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\core\message.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json_c_version.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json_object.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json_tokener.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json_object_iterator.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json_util.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\arraylist.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\bits.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\json.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\linkhash.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\printbuf.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\json-c\random_seed.h">
+      <Filter>include\json-c</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

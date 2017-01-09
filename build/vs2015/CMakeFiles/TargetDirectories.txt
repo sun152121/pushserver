@@ -1,0 +1,3 @@
+G:/project/pushserver/build/CMakeFiles/ALL_BUILD.dir
+G:/project/pushserver/build/CMakeFiles/ZERO_CHECK.dir
+G:/project/pushserver/build/src/CMakeFiles/pushserver.dir
