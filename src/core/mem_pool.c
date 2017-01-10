@@ -97,15 +97,15 @@ void* palloc(mempool_t* pool, int size, int zero) {
 	return ptr;
 }
 
-void* pmalloc(mempool_t* pool, int size) {
+void* p_malloc(mempool_t* pool, int size) {
 	return palloc(pool,size,0);
 }
 
-void* pcalloc(mempool_t* pool, int size) {
+void* p_calloc(mempool_t* pool, int size) {
 	return palloc(pool,size,1);
 }
 
-void pfree(mempool_t* pool,void* ptr) {
+void p_free(mempool_t* pool,void* ptr) {
 	short* tag = (short*)((uintptr_t)ptr - sizeof(short));
 	assert(*tag > 0 && *tag < MXAX_HEAD_SIZE);
 

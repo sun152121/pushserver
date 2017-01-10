@@ -31,6 +31,8 @@ void destroy_message(message_t *msg) {
 	if (body) {
 		pfree(pool, body);
 	}
+
+	pfree(pool,msg);
 }
 
 int set_head(message_t *msg,char *ptr, int head_len) {

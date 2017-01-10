@@ -50,7 +50,11 @@ int process_biz(mempool_t *pool, char *msg_buf, int msg_len,buf_t *send_buf) {
 	int i;
 	for (i = 0;; i++) {
 		if (biz_handlers[i].msg_handler == NULL) {
-			break;
+			//break;
+			json_object_put(head_obj);
+			destroy_message(msg);
+			destroy_message(resp);
+			return -1;
 		}
 
 		if (strcmp(msgtype, biz_handlers[i].msg_type) == 0) {

@@ -1,0 +1,7 @@
+/root/cpp/pushserver/build/gcc/CMakeFiles/edit_cache.dir
+/root/cpp/pushserver/build/gcc/CMakeFiles/rebuild_cache.dir
+/root/cpp/pushserver/build/gcc/src/CMakeFiles/edit_cache.dir
+/root/cpp/pushserver/build/gcc/src/CMakeFiles/rebuild_cache.dir
+/root/cpp/pushserver/build/gcc/src/CMakeFiles/pushserver.dir
+/root/cpp/pushserver/build/gcc/tests/CMakeFiles/edit_cache.dir
+/root/cpp/pushserver/build/gcc/tests/CMakeFiles/rebuild_cache.dir
