@@ -29,6 +29,6 @@ void destroy_context(context_t *ctx);
 connection_t *get_connection(context_t *ctx);
 void put_connection(context_t *ctx,connection_t *c);
 
-context_t *ctx;
+volatile context_t *ctx;
 
 #endif // !CONTEXT_H

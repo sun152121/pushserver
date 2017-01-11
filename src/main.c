@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #include "core/mem_pool.h"
 #include "core/rbtree.h"
@@ -19,6 +20,7 @@ void test4();
 void test5(int argc, char *argv[]);
 void test6();
 void test7();
+void daemonize(void);
 
 int main(int argc,char *argv[])
 {
@@ -203,16 +205,23 @@ void test6() {
 
 void test7()
 {
+	daemonize();
+
 	mempool_t* pool = create_mempool(POOL_BLOCK_DEFAULT_TOTAL_SIZE, 0);
 	if (pool == NULL) {
+		printf("create_mempool fail!\n");
 		return;
 	}
 
 	ctx = create_context(pool);
+	if (ctx == NULL) {
+		printf("create_context fail!\n");
+		return;
+	}
 
 	task_queue_t *task_queue = create_task_queue(pool);
 
-	threadpool_t *threadpool = create_threadpool(pool,1,thread_fun,task_queue);
+	threadpool_t *threadpool = create_threadpool(pool,16,thread_fun,task_queue);
 	threadpool->start(threadpool);
 
 	event_base_t *base = create_event_base(pool,1024,task_queue);
@@ -224,7 +233,7 @@ void test7()
 	int port = 8083;
 	int fd = init_socket(port);
 
-	connection_t *c = get_connection(ctx);
+	connection_t *c = get_connection((context_t *)ctx);
 	c->fd = fd;
 	c->recv = unix_recv;
 	c->send = unix_send;
@@ -237,9 +246,44 @@ void test7()
 
 	c->data = ev;
 
-	event_add_conn(base,c);
+	event_add_conn(base,c,0);
 
 	event_dispatch(base);
 
 	destroy_event_base(base);
+}
+
+#if 0
+void daemon() {
+	pid_t pid;
+
+	pid = fork();
+	if (pid < 0) {
+		exit(1);
+	}
+	else if (pid > 0) {
+		exit(0);
+	}
+
+	setsid();
+	//chdir("/");
+	umask(0);
+}
+#endif
+
+void daemonize(void) {
+	int fd;
+
+	if (fork() != 0) exit(0); /* parent exits */
+	setsid(); /* create a new session */
+
+			  /* Every output goes to /dev/null. If Redis is daemonized but
+			  * the 'logfile' is set to 'stdout' in the configuration file
+			  * it will not log at all. */
+	if ((fd = open("/dev/null", O_RDWR, 0)) != -1) {
+		dup2(fd, STDIN_FILENO);
+		dup2(fd, STDOUT_FILENO);
+		dup2(fd, STDERR_FILENO);
+		if (fd > STDERR_FILENO) close(fd);
+	}
 }

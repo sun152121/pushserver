@@ -35,7 +35,7 @@ int event_add_in(event_base_t *base, event_t *ev);
 int event_add_out(event_base_t *base, event_t *ev);
 int event_del_in(event_base_t *base, event_t *ev);
 int event_del_out(event_base_t *base, event_t *ev);
-int event_del_out(event_base_t *base, event_t *ev);
+int event_del(event_base_t *base, event_t *ev);
 
 int event_wait(event_base_t *base,int timeout);
 void event_dispatch(event_base_t *base);

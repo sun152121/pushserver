@@ -120,7 +120,7 @@ void on_accept(event_t *ev) {
 		if (fd > 0) {
 			set_noblocking(fd);
 			event_t *e = pmalloc(pool,sizeof(event_t));
-			connection_t *c = get_connection(ctx);
+			connection_t *c = get_connection((context_t *)ctx);
 			c->fd = fd;
 			c->recv = unix_recv;
 			c->send = unix_send;
@@ -141,7 +141,7 @@ void on_accept(event_t *ev) {
 			e->handler = on_handler;
 
 			c->data = e;
-			event_add_conn(ctx->base,c);
+			event_add_conn(ctx->base,c,1);
 		}
 		else {
 			if (errno == EAGAIN) {
@@ -157,6 +157,10 @@ void on_handler(event_t *ev) {
 	mempool_t *pool = ctx->pool;
 	int iRet;
 	int received;
+
+	if (c->fd < 0) {
+		return;
+	}
 	
 	if (events & EPOLLIN) {
 		int n;
@@ -176,21 +180,27 @@ void on_handler(event_t *ev) {
 
 			n = c->recv(c, c->recv_buf->last, size);
 			if (n == EAGAIN) {
+				event_add_in(ctx->base,ev);
 				break;
 			}
 			if (n == 0) {
 				//对方关闭连接
-				free(c->recv_buf->start);
-				event_del_conn(ctx->base, c);
-				put_connection(ctx,c);
+				event_del(ctx->base, ev);
+				close_connection(c);
+				put_connection((context_t *)ctx,c);
+				
+				pfree(pool,ev);
+				ev = NULL;
 
 				return;
 			}
 			if (n < 0) {
 				//出错
-				free(c->recv_buf->start);
-				event_del_conn(ctx->base, c);
-				put_connection(ctx, c);
+				event_del(ctx->base, ev);
+				close_connection(c);
+				put_connection((context_t *)ctx, c);
+
+				pfree(pool,ev);
 				
 				return;
 			}
@@ -209,7 +219,7 @@ void on_handler(event_t *ev) {
 
 					if (process_biz(pool, c->recv_buf->pos, msg_len, c->send_buf)) {
 						free(c->recv_buf->start);
-						put_connection(ctx, c);
+						put_connection((context_t *)ctx, c);
 						
 						return;
 					}
@@ -268,6 +278,7 @@ int send_buf(connection_t *c) {
 			//数据发完了
 			send_buf->pos = send_buf->start;
 			send_buf->last = send_buf->start;
+			break;
 		}
 	}
 
@@ -276,4 +287,14 @@ int send_buf(connection_t *c) {
 	}
 
 	return 0;
+}
+
+void close_connection(connection_t *c) {
+	close(c->fd);
+	c->fd = -1;
+
+	if (c->recv_buf->start) {
+		free(c->recv_buf->start);
+		c->recv_buf->start = NULL;
+	}	
 }

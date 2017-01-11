@@ -106,6 +106,9 @@ void* p_calloc(mempool_t* pool, int size) {
 }
 
 void p_free(mempool_t* pool,void* ptr) {
+	if (ptr == NULL)
+		return;
+
 	short* tag = (short*)((uintptr_t)ptr - sizeof(short));
 	assert(*tag > 0 && *tag < MXAX_HEAD_SIZE);
 

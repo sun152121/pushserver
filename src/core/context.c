@@ -13,6 +13,8 @@ context_t *create_context(mempool_t *pool) {
 	pthread_mutex_init(&ctx->conn_mutex,NULL);
 	ctx->free_connection_n = 0;
 	ctx->free_connections = NULL;
+
+	return ctx;
 }
 
 void destroy_context(context_t *ctx) {
@@ -52,7 +54,4 @@ void put_connection(context_t *ctx, connection_t *c) {
 	ctx->free_connections = c;
 	ctx->free_connection_n++;
 	pthread_mutex_unlock(&ctx->conn_mutex);
-
-	close(c->fd);
-	c->fd = -1;
 }

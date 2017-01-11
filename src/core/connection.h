@@ -46,9 +46,10 @@ int init_socket(int port);
 void on_accept(event_t *ev);
 void on_handler(event_t *ev);
 
-int event_add_conn(event_base_t *base, connection_t *c);
+int event_add_conn(event_base_t *base, connection_t *c, int oneshot);
 int event_del_conn(event_base_t *base, connection_t *c);
 
 int send_buf(connection_t *c);
+void close_connection(connection_t *c);
 
 #endif // !CONNECTION_H

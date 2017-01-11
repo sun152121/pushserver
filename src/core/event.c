@@ -66,7 +66,8 @@ int event_add_in(event_base_t *base, event_t *ev) {
 	int ep = base->epfd;
 	connection_t *c = ev->data;
 
-	event.events |= (EPOLLIN | EPOLLET);
+	//event.events |= (EPOLLIN | EPOLLET | EPOLLONESHOT);
+	event.events = (EPOLLIN | EPOLLET | EPOLLONESHOT);
 	event.data.ptr = ev;
 
 	status = epoll_ctl(ep, EPOLL_CTL_MOD,c->fd,&event);
@@ -84,6 +85,7 @@ int event_add_out(event_base_t *base, event_t *ev) {
 	int ep = base->epfd;
 	connection_t *c = ev->data;
 
+	//event.events |= (EPOLLOUT | EPOLLET | EPOLLONESHOT);
 	event.events |= (EPOLLOUT | EPOLLET);
 	event.data.ptr = ev;
 
@@ -133,7 +135,7 @@ int event_del(event_base_t *base, event_t *ev) {
 	return status;
 }
 
-int event_add_conn(event_base_t *base, connection_t *c) {
+int event_add_conn(event_base_t *base, connection_t *c,int oneshot) {
 	int status;
 	struct epoll_event event;
 	int ep = base->epfd;
@@ -141,6 +143,9 @@ int event_add_conn(event_base_t *base, connection_t *c) {
 
 	//event.events = EPOLLIN | EPOLLOUT | EPOLLET;
 	event.events = EPOLLIN | EPOLLET;
+	if (oneshot) {
+		event.events |= EPOLLONESHOT;
+	}
 	event.data.ptr = ev;
 
 	status = epoll_ctl(ep, EPOLL_CTL_ADD,c->fd,&event);
@@ -185,6 +190,7 @@ int event_wait(event_base_t *base, int timeout) {
 				task_t *task = pmalloc(pool,sizeof(task_t));
 				task->data = ev;
 				push_task(base->task_queue,task);
+				printf("nds[%d],push_task\n", nsd);
 			}
 		}
 
@@ -201,8 +207,8 @@ int event_wait(event_base_t *base, int timeout) {
 			continue;
 		}
 
-		printf("[event_wait] epoll wait on e %d with %d events failed: %s\n", ep, nevent,
-			strerror(errno));
+		/*printf("[event_wait] epoll wait on e %d with %d events failed: %s\n", ep, nevent,
+			strerror(errno));*/
 		return -1;
 	}
 }
@@ -210,6 +216,6 @@ int event_wait(event_base_t *base, int timeout) {
 void event_dispatch(event_base_t *base) {
 	int status;
 	while (1) {
-		status = event_wait(base,1000);
+		status = event_wait(base,10000);
 	}
 }
